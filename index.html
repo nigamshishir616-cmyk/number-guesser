@@ -3,93 +3,118 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Number Guesser</title>
+<title>Shishir Mohan Nigam | Portfolio</title>
+<meta name="description" content="Portfolio of Shishir Mohan Nigam, B.Tech CSE (AI &amp; ML) student.">
 <style>
-  :root { --bg:#14213d; --card:#1d2f57; --text:#f1f5f9; --accent:#fca311; --muted:#9fb0cf; }
+  :root { --bg:#f6f7f2; --ink:#1b2a2f; --muted:#5a6b70; --accent:#0b6e6e; --card:#ffffff; --line:#d9ded6; }
   * { box-sizing: border-box; }
-  body { margin:0; min-height:100vh; display:grid; place-items:center; background:var(--bg); color:var(--text); font-family:Georgia, serif; padding:1rem; }
-  main { background:var(--card); padding:2rem; border-radius:14px; width:100%; max-width:380px; text-align:center; }
-  h1 { margin:0 0 .5rem; font-size:1.8rem; }
-  p { color:var(--muted); margin:.4rem 0; }
-  #message { color:var(--text); font-size:1.15rem; min-height:2.6rem; }
-  input { width:100%; padding:.7rem; font-size:1.2rem; border-radius:8px; border:2px solid transparent; text-align:center; margin:.8rem 0; }
-  input:focus-visible, button:focus-visible { outline:3px solid var(--accent); outline-offset:2px; }
-  button { width:100%; padding:.7rem; font-size:1.05rem; font-weight:bold; border:0; border-radius:8px; background:var(--accent); color:#14213d; cursor:pointer; }
-  #restart { display:none; margin-top:.6rem; background:transparent; color:var(--accent); border:2px solid var(--accent); }
-  #history { font-size:.95rem; min-height:1.4rem; }
+  html { scroll-behavior: smooth; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:"Trebuchet MS", Verdana, sans-serif; line-height:1.6; }
+  header, section, footer { max-width:760px; margin:0 auto; padding:0 1.25rem; }
+  nav { display:flex; gap:1.25rem; padding:1.25rem 0; border-bottom:1px solid var(--line); }
+  nav a { color:var(--ink); text-decoration:none; font-weight:bold; }
+  nav a:hover { color:var(--accent); }
+  .hero { padding:4rem 0 3rem; }
+  .hero h1 { font-size:clamp(2.2rem, 7vw, 3.6rem); line-height:1.1; margin:0 0 1rem; }
+  .hero p { font-size:1.15rem; color:var(--muted); max-width:56ch; margin:0 0 1.5rem; }
+  .btn { display:inline-block; padding:.7rem 1.2rem; border-radius:8px; background:var(--accent); color:#fff; text-decoration:none; font-weight:bold; }
+  .btn.ghost { background:transparent; color:var(--accent); border:2px solid var(--accent); margin-left:.5rem; }
+  h2 { font-size:1.6rem; margin:3rem 0 1rem; }
+  .grid { display:grid; gap:1rem; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:1.25rem; display:flex; flex-direction:column; }
+  .card h3 { margin:0 0 .4rem; }
+  .card p { margin:0 0 .8rem; color:var(--muted); flex:1; }
+  .tags { font-size:.85rem; color:var(--accent); margin-bottom:.8rem; }
+  .links a { color:var(--accent); font-weight:bold; margin-right:1rem; }
+  ul.skills { padding:0; list-style:none; display:flex; flex-wrap:wrap; gap:.5rem; }
+  ul.skills li { border:1px solid var(--line); background:var(--card); border-radius:999px; padding:.25rem .85rem; }
+  footer { padding:3rem 1.25rem; color:var(--muted); }
+  footer a { color:var(--accent); }
+  a:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } }
 </style>
 </head>
 <body>
-<main>
-  <h1>Number Guesser</h1>
-  <p>I'm thinking of a number from 1 to 100. You have 7 tries.</p>
-  <p id="message">Make your first guess.</p>
-  <input id="guess" type="number" min="1" max="100" placeholder="Your guess" aria-label="Your guess">
-  <button id="submit">Guess</button>
-  <button id="restart">Play again</button>
-  <p id="tries">Tries left: 7</p>
-  <p id="history"></p>
-</main>
+<header>
+  <nav aria-label="Main">
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="hero">
+    <h1>Hi, I'm Shishir Mohan Nigam.</h1>
+    <p>I'm a second-year B.Tech student in Computer Science (AI &amp; ML). I build small projects to practice what I learn. You can play them here and read the code on GitHub.</p>
+    <a class="btn" href="#projects">See my projects</a>
+    <a class="btn ghost" id="gh-link" href="https://github.com/nigamshishir616-cmyk">GitHub profile</a>
+  </div>
+</header>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid" id="project-grid"></div>
+</section>
+
+<section id="about">
+  <h2>About me</h2>
+  <p>I'm a sophomore pursuing B.Tech in Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning. I enjoy turning ideas into small working projects, and I'm learning web development alongside AI/ML. Next, I want to build projects that combine the two.</p>
+  <ul class="skills">
+    <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Git &amp; GitHub</li><li>Python (learning)</li><li>AI / ML (learning)</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email me at <a href="mailto:you@example.com">you@example.com</a>, or find me on
+  <a href="https://github.com/nigamshishir616-cmyk">GitHub</a> and
+  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN">LinkedIn</a>.</p>
+</section>
+
+<footer>© <span id="year"></span> Shishir Mohan Nigam</footer>
 
 <script>
-  const MAX_TRIES = 7;
-  let secret, triesLeft, guesses;
+  // 1. Change this to your GitHub username.
+  const USERNAME = "nigamshishir616-cmyk";
 
-  const input = document.getElementById("guess");
-  const message = document.getElementById("message");
-  const triesText = document.getElementById("tries");
-  const history = document.getElementById("history");
-  const submitBtn = document.getElementById("submit");
-  const restartBtn = document.getElementById("restart");
-
-  function newGame() {
-    secret = Math.floor(Math.random() * 100) + 1;
-    triesLeft = MAX_TRIES;
-    guesses = [];
-    message.textContent = "Make your first guess.";
-    triesText.textContent = "Tries left: " + triesLeft;
-    history.textContent = "";
-    input.value = "";
-    input.disabled = false;
-    submitBtn.disabled = false;
-    restartBtn.style.display = "none";
-    input.focus();
-  }
-
-  function endGame(text) {
-    message.textContent = text;
-    input.disabled = true;
-    submitBtn.disabled = true;
-    restartBtn.style.display = "block";
-    restartBtn.focus();
-  }
-
-  function guess() {
-    const value = Number(input.value);
-    if (!Number.isInteger(value) || value < 1 || value > 100) {
-      message.textContent = "Enter a whole number from 1 to 100.";
-      return;
+  // 2. Add a new project by copying one block below. Keep the commas.
+  const projects = [
+    {
+      title: "Snake",
+      description: "The classic snake game. Eat food, grow longer, and avoid the walls. Works with keyboard, buttons, or swipes.",
+      tags: "HTML, CSS, JavaScript, Canvas",
+      repo: "snake-game",
+      live: "https://" + USERNAME + ".github.io/snake-game/"
+    },
+    {
+      title: "Number Guesser",
+      description: "A guessing game. Find the secret number from 1 to 100 in 7 tries.",
+      tags: "HTML, CSS, JavaScript",
+      repo: "number-guesser",
+      live: "https://" + USERNAME + ".github.io/number-guesser/"
+    },
+    {
+      title: "Your next project",
+      description: "Replace this with a short description of what it does.",
+      tags: "HTML, CSS, JavaScript",
+      repo: "your-repo-name",
+      live: ""  // leave empty if there is no live demo
     }
-    guesses.push(value);
-    triesLeft--;
-    triesText.textContent = "Tries left: " + triesLeft;
-    history.textContent = "Your guesses: " + guesses.join(", ");
-    input.value = "";
+  ];
 
-    if (value === secret) {
-      endGame("You got it in " + guesses.length + " tries. The number was " + secret + ".");
-    } else if (triesLeft === 0) {
-      endGame("Out of tries. The number was " + secret + ".");
-    } else {
-      message.textContent = value < secret ? "Too low. Go higher." : "Too high. Go lower.";
-      input.focus();
-    }
-  }
+  const grid = document.getElementById("project-grid");
+  projects.forEach(p => {
+    const card = document.createElement("article");
+    card.className = "card";
+    let links = '<a href="https://github.com/' + USERNAME + '/' + p.repo + '">View code</a>';
+    if (p.live) links = '<a href="' + p.live + '">Play it live</a>' + links;
+    card.innerHTML = "<h3></h3><p></p><div class='tags'></div><div class='links'>" + links + "</div>";
+    card.querySelector("h3").textContent = p.title;
+    card.querySelector("p").textContent = p.description;
+    card.querySelector(".tags").textContent = p.tags;
+    grid.appendChild(card);
+  });
 
-  submitBtn.addEventListener("click", guess);
-  input.addEventListener("keydown", e => { if (e.key === "Enter") guess(); });
-  restartBtn.addEventListener("click", newGame);
-  newGame();
+  document.getElementById("gh-link").href = "https://github.com/" + USERNAME;
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
